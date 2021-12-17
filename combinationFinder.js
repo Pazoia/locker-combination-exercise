@@ -48,6 +48,14 @@ function hintSolver() {
     console.log("Hint 4");
     console.log(possibleCombinations);
 
+    // Hint 3
+    // The sum of the last two digits are the same as the sum of the first and third digits.
+    possibleCombinations = possibleCombinations.filter(combination => {
+        return (combination[3] + combination[4]) === (combination[0] + combination[2]);
+    });
+    console.log("Hint 3");
+    console.log(possibleCombinations);
+
     console.log(`Your secret code is: `);
 }
 
