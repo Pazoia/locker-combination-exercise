@@ -21,8 +21,6 @@ function hintSolver() {
             }
         }
     }
-    console.log("Hint 1");
-    console.log(possibleCombinations);
 
     // Hint 2
     // The fourth digit is one-third of the second digit.
@@ -35,8 +33,6 @@ function hintSolver() {
         combinationsCopy[3] = combinationsCopy[1] / 3;
         return combinationsCopy;
     });
-    console.log("Hint 2");
-    console.log(possibleCombinations);
 
     // Hint 4
     // The sum of all the digits is 26
@@ -56,22 +52,20 @@ function hintSolver() {
         }
     });
     possibleCombinations = validHintFourCombinations;
-    console.log("Hint 4");
-    console.log(possibleCombinations);
 
     // Hint 3
     // The sum of the last two digits are the same as the sum of the first and third digits.
     possibleCombinations = possibleCombinations.filter(combination => {
         return (combination[3] + combination[4]) === (combination[0] + combination[2]);
     });
-    console.log("Hint 3");
-    console.log(possibleCombinations);
 
     // Hint 5
     // Not all the digits are unique
+    possibleCombinations = possibleCombinations.filter(combination => {
+        return (combination.length === 5) && hasDuplicates(combination);
+    });
 
-
-    console.log(`Your secret code is: `);
+    console.log(`Your secret code is: ${possibleCombinations}`);
 }
 
 hintSolver();
