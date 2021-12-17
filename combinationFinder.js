@@ -18,8 +18,15 @@ function hintSolver() {
     possibleCombinations = possibleCombinations.filter(([first, second]) => {
         return second % 3 === 0;
     });
+
+    possibleCombinations = possibleCombinations.map(combination => {
+        const combinationsCopy = [...combination];
+        combinationsCopy[3] = combinationsCopy[1] / 3;
+        return combinationsCopy;
+    });
     console.log("Hint 2");
     console.log(possibleCombinations);
+
 
     console.log(`Your secret code is: `);
 }
