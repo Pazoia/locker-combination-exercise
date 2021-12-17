@@ -1,3 +1,14 @@
+function hasDuplicates(array) {
+    const arrayCopy = [...array];
+    arrayCopy.sort();
+    for (let i = 0; i < arrayCopy.length; i++) {
+        if (arrayCopy[i] === arrayCopy[i + 1]) {
+            return true;
+        }
+    }
+    return false;
+}
+
 function hintSolver() {
     // Hint 1
     // The product of the first two digits is 24.
@@ -55,6 +66,10 @@ function hintSolver() {
     });
     console.log("Hint 3");
     console.log(possibleCombinations);
+
+    // Hint 5
+    // Not all the digits are unique
+
 
     console.log(`Your secret code is: `);
 }
