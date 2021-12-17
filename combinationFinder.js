@@ -27,6 +27,26 @@ function hintSolver() {
     console.log("Hint 2");
     console.log(possibleCombinations);
 
+    // Hint 4
+    // The sum of all the digits is 26
+    const digitsTotalMax = 26;
+    const validHintFourCombinations = [];
+    possibleCombinations.forEach(combination => {
+        const currentCombinationTotal = combination.reduce((a, b) => a + b, 0);
+        const difference = digitsTotalMax - currentCombinationTotal;
+        for (let digit1 = 0; digit1 < 10; digit1++) {
+            for (let digit2 = 0; digit2 < 10; digit2++) {
+                if (digit1 + digit2 === difference) {
+                    combination[2] = digit1;
+                    combination[4] = digit2;
+                    validHintFourCombinations.push([...combination])
+                }
+            }
+        }
+    });
+    possibleCombinations = validHintFourCombinations;
+    console.log("Hint 4");
+    console.log(possibleCombinations);
 
     console.log(`Your secret code is: `);
 }
