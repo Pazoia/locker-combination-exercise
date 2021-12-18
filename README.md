@@ -29,7 +29,7 @@ Write a script using javascript that can quickly check the possible combinations
 ## Launch
 
 - fork this repo into your machine
-- make sure your terminal is in the locker-combination-finder folder
+- make sure your terminal is in the same folder as the combinationFinder.js file
 - run the code below on your terminal
 
 ```
